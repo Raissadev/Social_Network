@@ -216,6 +216,7 @@ main.settings-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap:wrap;
 }
 /*ANIMATION*/
 .message-content, .text-content, .see-comments{
