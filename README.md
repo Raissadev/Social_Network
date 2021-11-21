@@ -1,6 +1,6 @@
 # Social Network
 <h3>Sobre o Projeto</h3>
-<p>Rede Social com laravel.</p>
+<p>Fala Devs! Estou trazendo aqui uma rede social com laravel que possui as seguintes funcionalidades: Adicionar ao amigos, Criação de Grupo, Perfil, Criação de post, Comentários entre outros... Além de possuir um design "atraente" e responsivo.</p>
 
 <ul>
   <li>Lenguages:</li>
@@ -21,6 +21,7 @@
 </ul>
 
 ![social-network](https://user-images.githubusercontent.com/82960240/142769246-10570bd8-b030-440f-98f1-cd0e7c7f116d.gif)
+![social-network-mobile](https://user-images.githubusercontent.com/82960240/142769448-9126c853-0785-42f8-95e5-a5fc3c1afb54.gif)
 
 
 <hr />
