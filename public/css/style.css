@@ -183,8 +183,12 @@ label.send-banner i{
     z-index: 999;
 }
 .see-comments {
-    bottom: -65%;
+    bottom:unset;
+    z-index: 998;
     padding: 0;
+}
+.message-content{
+    margin-bottom: 0 !important;
 }
 .see-comments ul{
     max-height: 100%;
@@ -193,7 +197,9 @@ label.send-banner i{
 .see-comments ul li{
     padding:0.4rem 1rem;
 }
-
+.h100-complete{
+    min-height: 100%;
+}
     
 /*COMMUNITY*/
 main.container-users .box{

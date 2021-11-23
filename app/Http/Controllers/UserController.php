@@ -16,12 +16,13 @@ class UserController extends Controller
 {
 
     public function index(){
+        $lastUsers = User::paginate(6);
         $users = User::get();
         $posts = Post::get();
         $comments = Comments::get();
         $friendRequest = friendRequest::get();
         $communitys = Community::get();
-        return view('home', [ 'posts' => $posts, 'users' => $users, 'friendsRequests' => $friendRequest, 'comments' => $comments, 'communitys' => $communitys ]);
+        return view('home', [ 'posts' => $posts, 'users' => $users, 'friendsRequests' => $friendRequest, 'comments' => $comments, 'communitys' => $communitys, 'lastUsers' => $lastUsers ]);
     }
 
     public function profile($id){

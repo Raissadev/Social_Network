@@ -42,6 +42,7 @@
                             <?php 
                                 foreach ($comments as $comment){
                                     foreach($users as $user){
+                                        if($post->id == $comment->post_id)
                                         if($comment->user_id == $user->id){
                                             $user = DB::select('select * from users where id = :id', ['id' => $comment->user_id]);
                                             $user = $user[0];

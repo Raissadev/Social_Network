@@ -11,8 +11,12 @@
             <div class="w50 w100-device-small">
                 <h1>{{ $groups->name_community ?? old('name_community') }}</h1>
                 <h5>{{ $groups->description_community ?? old('description_community') }}</h5>
-                @if(Session::get('participant') != $groups->name_community)
-                @if(Session::get('participant') == null)
+                <?php 
+                    $tbUsers = DB::select("select * from communities");
+                    $isUser = explode(',',$tbUsers[0]->users);
+                    $isParticipant = array_search(Session::get('id'),$isUser);
+                    if(!empty($isParticipant)){
+                ?>
                 <form  method="post" action="{{ route('groups-store', $groups->id) }}">
                     @csrf
                     @method('put')
@@ -20,8 +24,7 @@
                     <input type="hidden" name="users" value="{{ Session::get('id') }}" />
                     <button class="bgBlackWeakIn w20 w30-device-small">Participar</button>
                 </form>
-                @endif
-                @endif
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -54,8 +57,8 @@
         </section>
         
         <section class="items w70 w100-device-small margin-down-default-device-small">
-            @if(Session::get('participant') != null)
-            @if(Session::get('participant') == $groups->name_community)
+            
+            @if($idUsers = in_array(Session::get('id'), $idUsers))
             <section class="container-form margin-down-small">
                 <div class="row items-flex">
                     <figure class="img-user-default margin-right-small items-flex align-baseline">
@@ -77,13 +80,16 @@
                 </div>
             </section>
             @endif
-            @endif
 
-            @foreach($posts as $post)
-            @if($post->group_id == $groups->id)
+            <?php
+                foreach($posts as $post){
+                if($post->group_id == $groups->id){
+                    $users = DB::select("select * from users");
+                    foreach ($users as $key => $user){
+                        if($post->user === $user->email){
+            ?>
                 @include('components.content-post')
-            @endif
-            @endforeach
+            <?php }}}} ?>
 
         </section>
 

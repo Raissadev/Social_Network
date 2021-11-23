@@ -78,19 +78,23 @@ accordionBtns.forEach((accordion) => {
     this.classList.toggle("is-open");
 
     let content = this.nextElementSibling;
-    console.log(content);
 
-    var contentPost = document.querySelector(".content-post");
-
+    var contentBox = document.querySelector('.content-post .box');
+  
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
       content.style.display = "none";
-      contentPost.style.minHeight = "unset";
+      content.parentElement.parentElement.parentElement.parentElement.parentElement.style.minHeight = "unset";
+      content.style.marginBottom = "unset"
     } else {
       content.style.maxHeight = "max-content";
       content.style.display = "flex";
-      contentPost.style.minHeight = contentPost.clientHeight +  content.clientHeight + content.clientHeight + "px";
+      content.parentElement.parentElement.parentElement.parentElement.parentElement.style.minHeight = (contentBox.clientHeight + content.clientHeight + content.clientHeight + 120) + "px";
+      content.style.marginBottom = '-' + (content.clientHeight + 250) + "px";
     }
+
   };
 });
+
+
 

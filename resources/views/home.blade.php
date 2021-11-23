@@ -39,7 +39,7 @@
                 </div>
                 <div class="slide">
                     <ul class="storys items-flex">
-                        @foreach ($users as $user)
+                        @foreach ($lastUsers as $user)
                         @if($user->id != Session::get('id'))
                         <li>
                             <a href="{{ route('profile', $user->id) }}" class="text-center">

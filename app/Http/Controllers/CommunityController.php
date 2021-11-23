@@ -8,19 +8,23 @@ use App\Models\User;
 use App\Models\Comments;
 use App\Models\Community;
 use Illuminate\Support\Str;
+use DB;
 use Session;
 
 class CommunityController extends Controller
 {
     
     public function participateInTheCommunity(Request $request, $id){
-        $participant =  Community::find($request->id);
-        $users = explode(',',$request->users);
-        $request->users = $users;
-        if($participant){
-            Session::put('participant', $request->name_community);
+        $users = DB::select("select * from communities where name_community = '$request->name_community'");
+        $participant = Community::find($request->id);
+        if($request->users){
+            $usersGroup = $users[0]->users.','.$request->users;
+            $request->users = $usersGroup;
         }
-        $participant->update($request->all());
+
+        $users = DB::select("UPDATE `communities` SET users = '$request->users' where name_community = '$request->name_community'");
+        $participant->update([$request->users]);
+
         return redirect()->route('home');
     }
 
