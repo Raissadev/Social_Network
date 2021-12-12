@@ -25,7 +25,6 @@ https://user-images.githubusercontent.com/82960240/145725687-74a636b0-cd76-4057-
 
 ![social-network-mobile](https://user-images.githubusercontent.com/82960240/142769448-9126c853-0785-42f8-95e5-a5fc3c1afb54.gif)
 
-
 <hr />
 <h3>Autor</h3>
 <h4>Raissa Arcaro Daros</h4>
