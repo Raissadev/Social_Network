@@ -20,7 +20,9 @@
   
 </ul>
 
-![social-network](https://user-images.githubusercontent.com/82960240/142769246-10570bd8-b030-440f-98f1-cd0e7c7f116d.gif)
+
+https://user-images.githubusercontent.com/82960240/145725687-74a636b0-cd76-4057-8b1a-3507a85649c6.mp4
+
 ![social-network-mobile](https://user-images.githubusercontent.com/82960240/142769448-9126c853-0785-42f8-95e5-a5fc3c1afb54.gif)
 
 
